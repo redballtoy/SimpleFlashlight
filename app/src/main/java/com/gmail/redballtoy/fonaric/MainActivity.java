@@ -12,6 +12,8 @@ import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import java.io.IOException;
@@ -55,6 +57,10 @@ public class MainActivity extends AppCompatActivity implements SoundPool.OnLoadC
         mySwitchOnOff = (Switch) findViewById(R.id.sw_turn_on_off);
         //устанавливаем его в положение вкл
         mySwitchOnOff.setChecked(false);
+        //Отмасштабируем его
+        Float scaleSwitch = 3f;
+        mySwitchOnOff.setScaleX(scaleSwitch);
+        mySwitchOnOff.setScaleY(scaleSwitch);
         //присваиваем слушатель
         mySwitchOnOff.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
